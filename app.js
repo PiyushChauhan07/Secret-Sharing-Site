@@ -30,7 +30,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb+srv://piyush:pcpcpc123@firstcluster.lanvn.mongodb.net/todolistDB",{useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true});
+mongoose.connect(process.env.MONGODB_SERVER,{useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true});
 // mongoose.connect("mongodb://localhost:27017/userDB",{useNewUrlParser: true, useUnifiedTopology: true});
 // mongoose.set('useCreateIndex', true); //deprication in mongoose
 const userSchema = new mongoose.Schema({
